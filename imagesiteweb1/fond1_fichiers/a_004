@@ -1,0 +1,22 @@
+function detectPlugins(){
+var plugList = detectPlugins.arguments;
+var plugFound = '';
+with(navigator) for(listInd=0; listInd < plugList.length; listInd++){
+loop_plug:
+for(plugInd = 0; plugInd < plugins.length; plugInd++ )
+ for(keyInd=1; keyInd < plugList[listInd].length; keyInd++)
+  if(plugins[plugInd].name.toLowerCase().indexOf(plugList[listInd][keyInd]) >= 0){
+   if(plugFound =='') plugFound = plugList[listInd][0];
+   else plugFound += ',' + plugList[listInd][0];
+   break loop_plug;
+ }}
+ return (plugFound)?plugFound:false;
+}
+var _addr = "http://m3.moostik.net/compteur.php3?pseudo=vince61&cpt=Fond&option=invisible&ref="+escape(window.document.referrer.substring(0, 150))+"&sc="+screen.width+"x" + screen.height+"&cook=" + navigator.cookieEnabled+"&colordepth=" + screen.colorDepth+"&js=1";
+if(plugFound=detectPlugins(Array('Flash','shockwave'), Array('Java','java'), Array('QuickTime','quicktime'), Array('RealPlayer','realplayer'), Array('PDF','acrobat', 'pdf'), Array('MPlayer','mplayerplug'))) _addr += "&plugins=" + plugFound;
+moostik_scripts = document.getElementsByTagName("script");
+moostik_this_node = moostik_scripts.item(moostik_scripts.length -1).parentNode;
+moostik_element_image = document.createElement('img');
+moostik_element_image.setAttribute('src',_addr);
+moostik_element_image.setAttribute('alt','[moostik]');
+moostik_element_image.style.border= '0';

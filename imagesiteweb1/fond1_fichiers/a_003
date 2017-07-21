@@ -1,0 +1,29 @@
+function detectPlugins(){
+var plugList = detectPlugins.arguments;
+var plugFound = '';
+with(navigator) for(listInd=0; listInd < plugList.length; listInd++){
+loop_plug:
+for(plugInd = 0; plugInd < plugins.length; plugInd++ )
+ for(keyInd=1; keyInd < plugList[listInd].length; keyInd++)
+  if(plugins[plugInd].name.toLowerCase().indexOf(plugList[listInd][keyInd]) >= 0){
+   if(plugFound =='') plugFound = plugList[listInd][0];
+   else plugFound += ',' + plugList[listInd][0];
+   break loop_plug;
+ }}
+ return (plugFound)?plugFound:false;
+}
+var _addr = "http://m3.moostik.net/compteur_txt.php3?pseudo=vince61&cpt=site&data=live&suffixe=visiteur-visiteurs&option=bold&ref="+escape(window.document.referrer.substring(0, 150))+"&sc="+screen.width+"x" + screen.height+"&cook=" + navigator.cookieEnabled+"&colordepth=" + screen.colorDepth+"&js=1";
+if(plugFound=detectPlugins(Array('Flash','shockwave'), Array('Java','java'), Array('QuickTime','quicktime'), Array('RealPlayer','realplayer'), Array('PDF','acrobat', 'pdf'), Array('MPlayer','mplayerplug'))) _addr += "&plugins=" + plugFound;
+moostik_scripts = document.getElementsByTagName("script");
+moostik_this_node = moostik_scripts.item(moostik_scripts.length -1).parentNode;
+var moostik_element_id = 'moostik_'+ (moostik_scripts.length - 1);
+moostik_element_span = document.createElement('span');
+moostik_element_span.setAttribute('id',moostik_element_id);
+moostik_this_node.appendChild(moostik_element_span);
+moostik_getScript = document.createElement("script");
+moostik_getScript.setAttribute("type", "text/javascript");
+//    sendPath = encodeURIComponent(....);
+moostik_getScript.setAttribute("src", _addr+"&html_id="+moostik_element_id);
+moostik_getScript.setAttribute("defer", "defer");
+moostik_this_node.appendChild(moostik_getScript);
+
