@@ -1,0 +1,98 @@
+body{
+	background: url(imagesiteweb1/pelleteuse.gif) top right no-repeat ,url(imagesiteweb1/fond1_fichiers/abstrait-vert-mouvement.jpg) fixed no-repeat; 
+}
+p{
+	font-family: georgia,serif,sans-serif;
+}
+h1{
+	text-align: center;
+	color: #FFE4B5;
+	font-weight: bold;
+	font-size: 50px;
+}
+.intro{
+	text-align: center;
+	color: #904000;
+	text-shadow: 10px 5px 10px #E05000;
+	font-size: 20px;
+}
+.package{
+	display: flex;
+	overflow: visible;
+	height:900px;
+	width: 1200px;
+	margin: auto;
+	
+}
+.principale{
+	min-width: 500px;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 150px;
+	margin-top: 50px;
+}
+article{
+	padding: 10px 10px 30px 10px;
+	margin: 20px 20px 150px 20px;
+	color:#300020;
+	background-color: #FFE4B5;
+	border: 3px maroon solid;
+	border-radius: 20px/20px;
+}
+.corps{
+	text-align: justify;
+}
+.note{
+	text-align: center;
+	font-size: 20px;
+	color: maroon;
+}
+aside{
+	display: flex;
+	overflow: scroll;
+	height: 300px;
+	text-align: center;
+}
+.affichage{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 35px;
+	margin-bottom: 30px;
+}
+.index{
+	border: 3px maroon solid;
+	border-style: outset;
+	width: 13%;
+	text-align: center;
+	background-color: green;
+}
+.liensgauches{
+	border: 3px #FF6347 solid;
+	border-radius: 10px 10px;
+	width:20%;
+	left:5px;
+	background-color: #D2B48C;
+}
+.lien{
+	margin-bottom: 30px;
+}
+figcaption{
+	font-weight: bold;
+}
+footer{
+	text-align: center;
+	font-family: arial;
+}
+a{
+	color: maroon;
+}
+a:visited
+{
+	color:maroon;
+}
+a:hover
+{
+	color:maroon;
+	font-size:20px;
+}
